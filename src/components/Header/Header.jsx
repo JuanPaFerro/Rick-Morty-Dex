@@ -2,9 +2,9 @@ import { useContext } from "react";
 import ThemeContext from "../../context/ThemeContext";
 import "./Header.css";
 
-const Header = ({ setDarkMode }) => {
+const Header = () => {
   const context = useContext(ThemeContext);
-  const handleMode = () => setDarkMode((prevState) => !prevState);
+  const handleMode = () => context.setDarkMode((prevState) => !prevState);
 
   return (
     <div className={`Header ${!!context.darkMode ? "dark" : "light"}`}>
