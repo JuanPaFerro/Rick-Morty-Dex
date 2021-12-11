@@ -10,7 +10,9 @@ const CharacterCard = ({ characterData, onAction, isFavorite }) => {
           <p>Origin: {characterData.origin.name}</p>
           <p>Species: {characterData.species}</p>
           <p>Status: {characterData.status}</p>
-          <button onClick={()=>onAction(characterData)}>{`${isFavorite ? "Remove from" : "Add to"}`} ❤</button>
+          <button onClick={() => onAction(characterData)}>
+            {`${isFavorite ? "Remove from" : "Add to"}`} ❤
+          </button>
         </div>
       </div>
     </div>

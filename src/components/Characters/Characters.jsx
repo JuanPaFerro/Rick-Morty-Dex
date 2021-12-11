@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useReducer, useMemo } from "react";
+import { useContext, useReducer } from "react";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import ThemeContext from "../../context/ThemeContext";
 
@@ -13,7 +13,7 @@ const reducer = (state, action) => {
   return reducerObject(state, action.payload)[action.type] || state;
 };
 
-const Characters = ({load, characters}) => {
+const Characters = ({ load, characters }) => {
   const [favs, dispatch] = useReducer(reducer, initialState);
 
   const onAction = (character) => {
@@ -26,7 +26,6 @@ const Characters = ({load, characters}) => {
   };
 
   const context = useContext(ThemeContext);
-
 
   return (
     <div className="All-lists-container">
@@ -75,8 +74,6 @@ const Characters = ({load, characters}) => {
               ))}
             </div>
           </div>
-
-          
         </>
       )}
     </div>

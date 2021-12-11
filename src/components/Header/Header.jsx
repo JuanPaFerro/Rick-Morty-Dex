@@ -7,7 +7,11 @@ const Header = () => {
   const handleMode = () => context.setDarkMode((prevState) => !prevState);
 
   return (
-    <div className={`Header ${!!context.darkMode ? "dark-header" : "light-header"}`}>
+    <div
+      className={`Header ${
+        !!context.darkMode ? "dark-header" : "light-header"
+      }`}
+    >
       <h1>{`R&M'dex`}</h1>
       <button onClick={handleMode} type="button">
         {!context.darkMode ? "DarkMode" : "LightMode"}

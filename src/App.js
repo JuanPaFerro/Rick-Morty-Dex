@@ -4,16 +4,11 @@ import Header from "./components/Header/Header";
 import ThemeContext from "./context/ThemeContext";
 import Search from "./components/Search/Search";
 import { useState } from "react";
-import useCharacters from "./Utilities/useCharacters";
+import useCharacters from "./hooks/useCharacters";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const {
-    filteredCharacters,
-    search,
-    load,
-    setSearch,
-   } = useCharacters();
+  const { filteredCharacters, search, load, setSearch } = useCharacters();
 
   return (
     <div className="App">
