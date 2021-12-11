@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext, useReducer } from "react";
+import { useEffect, useState, useContext, useReducer, useMemo } from "react";
 import CharacterCard from "../CharacterCard/CharacterCard";
 import ThemeContext from "../../context/ThemeContext";
 
@@ -13,11 +13,8 @@ const reducer = (state, action) => {
   return reducerObject(state, action.payload)[action.type] || state;
 };
 
-const Characters = () => {
-  const [characters, setCharacters] = useState([]);
-  const [load, setLoad] = useState(true);
+const Characters = ({load, characters}) => {
   const [favs, dispatch] = useReducer(reducer, initialState);
-  console.log(favs);
 
   const onAction = (character) => {
     if (favs.favorites.includes(character)) {
@@ -30,14 +27,6 @@ const Characters = () => {
 
   const context = useContext(ThemeContext);
 
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com//api/character/")
-      .then((resp) => resp.json())
-      .then((data) => {
-        setCharacters(data.results);
-        setLoad(false);
-      });
-  }, []);
 
   return (
     <div className="All-lists-container">
@@ -78,7 +67,7 @@ const Characters = () => {
             >
               {characters.map((char) => (
                 <CharacterCard
-                  isFavorite={ favs.favorites.includes(char) ? true : false}
+                  isFavorite={favs.favorites.includes(char) ? true : false}
                   characterData={char}
                   key={char.id}
                   onAction={onAction}

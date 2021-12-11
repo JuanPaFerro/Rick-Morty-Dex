@@ -5,7 +5,6 @@ import { useContext } from "react";
 const Search = ({ search, setSearch }) => {
   const context = useContext(ThemeContext)
 
-  console.log(search);
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
