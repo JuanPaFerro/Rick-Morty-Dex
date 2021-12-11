@@ -75,6 +75,8 @@ const Characters = ({load, characters}) => {
               ))}
             </div>
           </div>
+
+          
         </>
       )}
     </div>

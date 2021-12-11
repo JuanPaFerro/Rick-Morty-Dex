@@ -1,13 +1,14 @@
 import "./Search.css";
 import ThemeContext from "../../context/ThemeContext";
-import { useContext } from "react";
+import { useCallback, useContext,useRef } from "react";
 
 const Search = ({ search, setSearch }) => {
   const context = useContext(ThemeContext)
+  const searchInput = useRef(null)
 
-  const handleChange = (e) => {
-    setSearch(e.target.value);
-  };
+  const handleChange = useCallback(() => {
+    setSearch(searchInput.current.value);
+  }, []);
 
   return (
     <div className={`Search-container ${!!context.darkMode ? "dark-search-container" : "light-search-container"}`}>
@@ -16,6 +17,7 @@ const Search = ({ search, setSearch }) => {
         type="text"
         onChange={handleChange}
         value={search}
+        ref={searchInput}
         placeholder="Search for a Character"
       />
     </div>

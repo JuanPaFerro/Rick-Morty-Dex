@@ -4,9 +4,12 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.list-container h1{
+.list-container h1 {
   display: inline;
   color: rgba(255, 255, 255, 0.5);
+}
+.light h1 {
+  color: rgba(2, 1, 1, 0.5);
 }
 .dark {
   background-color: rgb(32, 30, 30);
@@ -35,7 +38,6 @@
 }
 .dark .card:hover .box::before {
   height: 70%;
-
 }
 
 .light .card {
@@ -89,7 +91,6 @@
   padding: 20px;
   text-align: center;
   z-index: 10;
-
 }
 .Characters .card .box .content img {
   max-width: 200px;
@@ -154,6 +155,6 @@
   color: #fff;
 }
 
-.light .card:hover .box .content button{
+.light .card:hover .box .content button {
   background: #ff568f;
 }
