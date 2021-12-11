@@ -1,23 +1,21 @@
+.dark-search-container {
+  background-color: rgb(32, 30, 30);
+}
 .Search {
-  background: #06111de7;
   border-radius: 5px;
-  border: 2px solid #1c374b;
-  margin: 0 24px;
+  margin: 30px;
   height: 50px;
-  width: calc(100% - 62px);
+  width: 70%;
+  color: rgb(71, 69, 69);
+
   font-size: 24px;
   text-align: center;
-  font-family: "Zen Kaku Gothic Antique";
   font-weight: 400;
+  box-shadow: 0px 5px 50px #2c29293b;
+}
+.dark-search-container .Search {
+  background: #06111de7;
   color: whitesmoke;
+  border: 2px solid #c9d9e6;
   box-shadow: 0px 5px 50px #1c374b3b;
-}
-.todo_search::placeholder {
-  color: whitesmoke;
-  font-family: "Zen Kaku Gothic Antique";
-  font-weight: 400;
-}
-
-.todo_search:focus {
-  outline-color: #61dafa;
 }
