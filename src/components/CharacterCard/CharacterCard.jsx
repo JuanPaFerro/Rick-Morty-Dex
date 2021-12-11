@@ -1,6 +1,6 @@
 import "./CharacterCard.css";
 
-const CharacterCard = ({ characterData }) => {
+const CharacterCard = ({ characterData, onAction, isFavorite }) => {
   return (
     <div className="card">
       <div className="box">
@@ -10,7 +10,7 @@ const CharacterCard = ({ characterData }) => {
           <p>Origin: {characterData.origin.name}</p>
           <p>Species: {characterData.species}</p>
           <p>Status: {characterData.status}</p>
-          <a href={characterData.origin.url}>See More Data</a>
+          <button onClick={()=>onAction(characterData)}>{`${isFavorite ? "Remove from" : "Add to"}`} ❤</button>
         </div>
       </div>
     </div>

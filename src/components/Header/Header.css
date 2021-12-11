@@ -2,17 +2,21 @@
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.322) ;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.322);
 }
+.dark-header {
+  background-color: rgb(32, 30, 30);
+}
+
+
 .Header h1 {
   margin: 0px;
 }
-.light h1{
-    color: rgb(71, 69, 69);
-
-}
-.dark h1{
+.dark-header h1 {
   color: rgba(255, 255, 255, 0.774);
+}
+.light-header h1 {
+  color: rgb(71, 69, 69);
 }
 
 .Header button {
@@ -25,15 +29,16 @@
   border: none;
   transition: 0.5s;
 }
-.Header button:hover {
-  background: #ff568f;
-}
-.light button {
+.light-header button {
   background: #03a9f4;
   color: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
 }
-.dark button {
+.dark-header button {
   background: #2196f3;
   color: #fff;
+}
+
+.Header button:hover {
+  background: #ff568f;
 }

@@ -4,6 +4,10 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.list-container h1{
+  display: inline;
+  color: rgba(255, 255, 255, 0.5);
+}
 .dark {
   background-color: rgb(32, 30, 30);
 }
@@ -131,24 +135,25 @@
 .Characters .card:hover .box .content p {
   color: #fff;
 }
-.Characters .card .box .content a {
+.Characters .card .box .content button {
   display: inline-block;
   padding: 8px 20px;
   margin-top: 5px;
   border-radius: 20px;
   text-decoration: none;
   font-weight: 400;
+  border: none;
 }
-.light .card .box .content a {
+.light .card .box .content button {
   background: #03a9f4;
   color: #fff;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
 }
-.dark .card .box .content a {
+.dark .card .box .content button {
   background: #2196f3;
   color: #fff;
 }
 
-.light .card:hover .box .content a {
+.light .card:hover .box .content button{
   background: #ff568f;
 }
