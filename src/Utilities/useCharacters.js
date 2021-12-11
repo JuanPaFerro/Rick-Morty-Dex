@@ -15,12 +15,16 @@ const useCharacters = () => {
           setLoad(false);
         });
     } else {
-      const newChars = characters.filter((f) =>
-        f.name.toLowerCase().includes(search.toLowerCase())
-      );
       setFilteredCharacters(newChars);
     }
   }, [search]);
+  const newChars = useMemo(
+    () =>
+      characters.filter((f) =>
+        f.name.toLowerCase().includes(search.toLowerCase())
+      ),
+    [search, filteredCharacters]
+  );
 
   const states = {
     filteredCharacters,
